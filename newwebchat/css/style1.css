@@ -1,0 +1,132 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background:#243b55;
+}
+.login-box{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    
+}
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #f8b5c1;
+    text-align: center;
+}
+.login-box .user-box {
+    position: relative;
+}
+.login-box .user-box input {
+    margin-bottom: 30px;
+    border-bottom: 1px solid  #f8b5c1;
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #f8b5c1;
+    font-size: 15px;
+    padding: 0 0 0 20px;
+    background: rgba(245, 163, 237, 0.1);
+    outline: none;
+}
+i{
+    color: #f8b5c1;
+}
+::-webkit-input-placeholder{
+    color: #f8b5c1;
+}
+.login-box .user-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #f8b5c1;
+    pointer-events: none;
+    transform: .5s;
+}
+.login-box .user-box input:focus~label
+.login-box .user-box input:valid~label{
+    top: -20px;
+    left: 0;
+    color: #7cd5ff;
+    font-size: 12px;
+}
+.login-box a:hover {
+    background: #465B7E;
+    color: #7cd5ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #AAC5D6,
+        0 0 25px #AAC5D6,
+        0 0 50px #AAC5D6,
+        0 0 100px #AAC5D6;
+    
+}
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #7cd5ff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-top: 20px;
+    letter-spacing: 4px;
+    background: #465B7E;
+    border-radius: 5px;
+    left: 180px;
+}
+.sky  {
+    color: #ff0000;
+    text-align: center;
+}
+.dark-button {
+    background-color: #465B7E; /* สีพื้นหลังมืด */
+    border: none;
+    font-size: 16px;
+}
+
+/* สร้าง bubble ที่ลอยขึ้นบนและมีการเคลื่อนไหว */
+.bubble {
+    --size: 100px;
+    width: calc(var(--size));
+    height: calc(var(--size));
+    border-radius: 100%;
+    background-color: #ffc2d0;
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--x) * 10%);
+    animation: to-top calc(var(--t) * 1ms) infinite, swing calc(var(--t) * 0.3ms) infinite alternate;
+    transform: translateX(0px);
+  }
+  @keyframes to-top {
+    from {
+      bottom: calc(0px -var(--size));
+    }
+    to {
+      bottom: 100%;
+    }
+  }
+  @keyframes swing {
+    from {
+      transform: translateX(calc(var(--y) * 20%));
+    }
+    to {
+      transform: translateX(calc(var(--y) * -20%));
+    }
+  }
